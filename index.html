@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Biuti Perú | Servicios de Belleza a Domicilio en Lima</title>
+
+    <!-- Google Fonts & Material Symbols -->
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <!-- AOS CSS (Animaciones al Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5b21b6",
+                        "primary-hover": "#4c1d95",
+                        "primary-light": "#f3e8ff",
+                        "secondary": "#ec4899",
+                        "secondary-hover": "#db2777",
+                        "background": "#fafaf9",
+                        "surface": "#ffffff",
+                        "surface-variant": "#f4f4f5",
+                        "text-main": "#18181b",
+                        "text-muted": "#71717a",
+                        "border-color": "#e4e4e7"
+                    },
+                    fontFamily: {
+                        sans: ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    boxShadow: {
+                        "soft": "0 10px 30px -5px rgba(91, 33, 182, 0.08)",
+                        "card-float": "0 20px 40px -10px rgba(91, 33, 182, 0.12)"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fafaf9;
+            color: #18181b;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tab-btn.active {
+            background-color: #5b21b6;
+            color: #ffffff;
+            border-color: #5b21b6;
+        }
+    </style>
+</head>
+<body class="bg-background text-text-main antialiased selection:bg-secondary selection:text-white">
+
+<!-- Botón Flotante WhatsApp -->
+<a href="https://wa.me/51936638219?text=Hola%20Biuti,%20deseo%20consultar%20por%20sus%20servicios%20a%20domicilio." 
+   target="_blank" 
+   aria-label="Contactar por WhatsApp" 
+   class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full shadow-2xl hover:scale-110 transition-transform z-50 flex items-center justify-center">
+    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.183-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.765-5.77zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/>
+    </svg>
+</a>
+
+<!-- Header / TopNavBar -->
+<header class="sticky top-0 z-50 bg-surface/90 backdrop-blur-md border-b border-border-color shadow-sm h-20">
+    <div class="max-w-7xl mx-auto px-6 md:px-12 h-full flex justify-between items-center">
+        
+        <!-- Logo Único de Marca con Sobresalida Estilizada -->
+        <a class="relative flex items-center group h-full py-1" href="#inicio" aria-label="Inicio Biuti">
+            <img src="img/logo.png" alt="Logo Biuti Perú" class="h-32 w-auto object-contain transition-transform group-hover:scale-105 drop-shadow-sm -my-2 relative z-10" />
+        </a>
+
+        <!-- Menú Escritorio -->
+        <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-text-muted">
+            <a class="hover:text-primary transition-colors py-1" href="#inicio">Inicio</a>
+            <a class="hover:text-primary transition-colors py-1" href="#servicios">Servicios & Tarifas</a>
+            <a class="hover:text-primary transition-colors py-1" href="#resultados">Resultados</a>
+            <a class="hover:text-primary transition-colors py-1" href="#cobertura">Cobertura</a>
+            <a class="hover:text-primary transition-colors py-1" href="#protocolos">Bioseguridad</a>
+            <a class="hover:text-primary transition-colors py-1" href="#reserva">Reservar Cita</a>
+        </nav>
+
+        <!-- CTA Principal -->
+        <div class="hidden md:flex items-center gap-3">
+            <a href="#reserva" class="bg-primary text-white font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-primary-hover transition-colors shadow-md flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">calendar_month</span>
+                <span>Agendar Cita</span>
+            </a>
+        </div>
+
+        <!-- Botón Menú Móvil -->
+        <button id="menu-btn" class="md:hidden text-primary p-2 focus:outline-none">
+            <span class="material-symbols-outlined text-3xl">menu</span>
+        </button>
+    </div>
+
+    <!-- Dropdown Móvil -->
+    <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-border-color px-6 py-6 flex-col space-y-4 shadow-xl">
+        <a class="font-bold text-primary" href="#inicio">Inicio</a>
+        <a class="font-bold text-text-muted hover:text-primary" href="#servicios">Servicios & Tarifas</a>
+        <a class="font-bold text-text-muted hover:text-primary" href="#resultados">Resultados Reales</a>
+        <a class="font-bold text-text-muted hover:text-primary" href="#cobertura">Distritos & Cobertura</a>
+        <a class="font-bold text-text-muted hover:text-primary" href="#protocolos">Protocolos de Bioseguridad</a>
+        <a class="font-bold text-text-muted hover:text-primary" href="#reserva">Reservar Cita</a>
+        <a class="inline-block w-full text-center bg-primary text-white font-bold py-3 rounded-full shadow" href="#reserva">
+            Agendar Servicio
+        </a>
+    </div>
+</header>
+
+<main class="w-full">
+
+<!-- 1. HERO SECTION -->
+<section class="relative min-h-[calc(100vh-80px)] flex items-center justify-center py-20 px-6 md:px-12 overflow-hidden" id="inicio">
+    
+    <!-- Tag Picture con imágenes independientes para móvil y desktop -->
+    <picture class="absolute inset-0 w-full h-full z-0">
+        <!-- 📱 Imagen Exclusiva para MÓVIL (Menor a 768px) -->
+        <source media="(max-width: 767px)" srcset="img/heromovil.png">
+        
+        <!-- 💻 Imagen Exclusiva para ESCRITORIO (768px a más) -->
+        <img src="img/hero.png" alt="Biuti Perú - Servicios de belleza a domicilio" class="w-full h-full object-cover"/>
+    </picture>
+
+    <!-- Overlay Tinte Morado / Fucsia -->
+    <div class="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary/20 to-black/70 z-10"></div>
+
+    <div class="relative z-20 max-w-5xl mx-auto text-center text-white space-y-6" data-aos="fade-up">
+        <span class="inline-block bg-secondary text-white font-extrabold text-xs px-5 py-2 rounded-full uppercase tracking-wider shadow-md">
+            Atención Profesional a Domicilio en Lima
+        </span>
+        
+        <h1 class="font-extrabold text-4xl sm:text-6xl md:text-7xl leading-tight text-white tracking-tight">
+            La experiencia de salón <br/>
+            <span class="text-secondary bg-white/10 px-4 py-1 rounded-2xl inline-block mt-2">en la comodidad de tu casa</span>
+        </h1>
+        
+        <p class="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mx-auto font-light leading-relaxed">
+            Especialistas capacitadas listas para engreírte con protocolos de bioseguridad, materiales esterilizados e insumos de alta gama.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6">
+            <a href="#servicios" class="w-full sm:w-auto bg-secondary text-white font-bold text-xs uppercase tracking-wider px-10 py-5 rounded-full hover:bg-secondary-hover transition-all shadow-xl flex items-center justify-center gap-2">
+                <span>Ver Carta de Servicios</span>
+                <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </a>
+            <a href="#reserva" class="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/40 text-white font-bold text-xs uppercase tracking-wider px-10 py-5 rounded-full hover:bg-white hover:text-primary transition-colors">
+                Calcular Presupuesto
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 2. CATÁLOGO INTERACTIVO DE SERVICIOS -->
+<section class="py-20 px-6 md:px-12 max-w-7xl mx-auto" id="servicios">
+    <div class="text-center mb-12 space-y-3" data-aos="fade-up">
+        <span class="text-xs font-bold uppercase tracking-wider text-secondary">Nuestra Carta</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-primary">Servicios & Tarifas</h2>
+        <p class="text-text-muted max-w-2xl mx-auto text-sm">
+            Selecciona la categoría para revisar la duración, opciones y precios detallados de cada atención a domicilio.
+        </p>
+    </div>
+
+    <!-- Pestañas de Categorías -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12" data-aos="fade-up" data-aos-delay="100">
+        <button class="tab-btn active px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider border border-border-color transition-all hover:scale-105" onclick="openTab(event, 'tab-unas')">Uñas Naturales & Gel</button>
+        <button class="tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider border border-border-color transition-all hover:scale-105" onclick="openTab(event, 'tab-sistemas')">Sistemas de Uñas</button>
+        <button class="tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider border border-border-color transition-all hover:scale-105" onclick="openTab(event, 'tab-pestanas')">Pestañas & Cejas</button>
+        <button class="tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider border border-border-color transition-all hover:scale-105" onclick="openTab(event, 'tab-podologia')">Podología Clínica</button>
+        <button class="tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider border border-border-color transition-all hover:scale-105" onclick="openTab(event, 'tab-depilacion')">Depilación</button>
+        <button class="tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider border border-border-color transition-all hover:scale-105" onclick="openTab(event, 'tab-cabello')">Cabello & Peinados</button>
+        <button class="tab-btn px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider border border-border-color transition-all hover:scale-105" onclick="openTab(event, 'tab-masajes')">Masajes</button>
+    </div>
+
+    <!-- Contenido Pestaña 1: Uñas Naturales & Gel -->
+    <div id="tab-unas" class="tab-content block">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group" data-aos="fade-up" data-aos-delay="100">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Manicure Clásica" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Manicure & Pedicure Clásica</h3>
+                    <p class="text-xs text-text-muted">Esmaltado clásico OPI. Incluye color entero y gotas secantes.</p>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Manicure (45 min)</span><strong class="text-secondary">S/ 40</strong></div>
+                        <div class="flex justify-between font-medium"><span>Pedicure (50 min)</span><strong class="text-secondary">S/ 50</strong></div>
+                        <div class="flex justify-between font-extrabold text-primary pt-1 border-t border-border-color"><span>Combo Mani + Pedi (1.5 hrs)</span><strong>S/ 80</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group" data-aos="fade-up" data-aos-delay="200">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Esmaltado Gel" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Esmaltado Gel Color OPI</h3>
+                    <p class="text-xs text-text-muted">Duración aproximada de 15 a 20 días con curado en lámpara LED.</p>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Manicure Gel (45 min)</span><strong class="text-secondary">S/ 65</strong></div>
+                        <div class="flex justify-between font-medium"><span>Pedicure Gel (1 hr)</span><strong class="text-secondary">S/ 75</strong></div>
+                        <div class="flex justify-between font-extrabold text-primary pt-1 border-t border-border-color"><span>Combo Mani Gel + Pedi Gel (2 hrs)</span><strong>S/ 125</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group" data-aos="fade-up" data-aos-delay="300">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Línea Vegana" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Línea Vegana OPI Nature Strong</h3>
+                    <p class="text-xs text-text-muted">Fórmula de origen vegetal libre de químicos agresivos.</p>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Manicure Vegana (45 min)</span><strong class="text-secondary">S/ 55</strong></div>
+                        <div class="flex justify-between font-medium"><span>Pedicure Vegana (50 min)</span><strong class="text-secondary">S/ 65</strong></div>
+                        <div class="flex justify-between font-extrabold text-primary pt-1 border-t border-border-color"><span>Combo Mani + Pedi Vegana</span><strong>S/ 110</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Pestaña 2: Sistemas de Uñas -->
+    <div id="tab-sistemas" class="tab-content hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Acrílicas" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Acrílicas & Polygel</h3>
+                    <p class="text-xs text-text-muted">Extensión con tips o esculpidas según tu estilo.</p>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Acrílicas c/tips + gel</span><strong class="text-secondary">S/ 150</strong></div>
+                        <div class="flex justify-between font-medium"><span>Acrílicas esculpidas + gel</span><strong class="text-secondary">S/ 170</strong></div>
+                        <div class="flex justify-between font-medium"><span>Polygel c/tips + gel</span><strong class="text-secondary">S/ 140</strong></div>
+                        <div class="flex justify-between font-medium"><span>Polygel esculpidas + gel</span><strong class="text-secondary">S/ 160</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Rubber Kapping" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Nivelación & Cuidado</h3>
+                    <p class="text-xs text-text-muted">Fortalecimiento de la uña natural con Rubber o Kapping.</p>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Aplicación Rubber + Gel</span><strong class="text-secondary">S/ 85</strong></div>
+                        <div class="flex justify-between font-medium"><span>Kapping + Gel Color</span><strong class="text-secondary">S/ 105</strong></div>
+                        <div class="flex justify-between font-medium"><span>Dip Powder + Gel Color</span><strong class="text-secondary">S/ 115</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Diseños" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Diseños & Adicionales</h3>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Diseño Francesa</span><strong class="text-secondary">S/ 10</strong></div>
+                        <div class="flex justify-between font-medium"><span>Diseños mano alzada</span><strong class="text-secondary">desde S/ 5</strong></div>
+                        <div class="flex justify-between font-medium"><span>Retiro de Sistema</span><strong class="text-secondary">S/ 40</strong></div>
+                        <div class="flex justify-between font-medium"><span>Retiro Gel (manos)</span><strong class="text-secondary">S/ 10</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Pestaña 3: Pestañas & Cejas -->
+    <div id="tab-pestanas" class="tab-content hidden">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Lifting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Lifting & Laminado</h3>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Lifting de Pestañas (1h 15m)</span><strong class="text-secondary">S/ 130</strong></div>
+                        <div class="flex justify-between font-medium"><span>Laminado de Cejas (40m)</span><strong class="text-secondary">S/ 70</strong></div>
+                        <div class="flex justify-between font-medium"><span>Tinturado cejas/pestañas</span><strong class="text-secondary">S/ 50</strong></div>
+                        <div class="flex justify-between font-medium"><span>Puesta de Pestañas 1x1</span><strong class="text-secondary">S/ 85</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Extensiones" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Extensiones de Pestañas</h3>
+                    <p class="text-xs text-text-muted">Aplicación pelo a pelo efecto natural o volumen.</p>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Extensiones Clásicas</span><strong class="text-secondary">S/ 160</strong></div>
+                        <div class="flex justify-between font-medium"><span>Extensiones Híbridas</span><strong class="text-secondary">S/ 180</strong></div>
+                        <div class="flex justify-between font-medium"><span>Volumen Ruso</span><strong class="text-secondary">S/ 250</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Retoques" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Retoques de Extensiones</h3>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between font-medium"><span>Retoque hasta 1 semana</span><strong class="text-secondary">desde S/ 100</strong></div>
+                        <div class="flex justify-between font-medium"><span>Retoque hasta 2 semanas</span><strong class="text-secondary">desde S/ 125</strong></div>
+                        <div class="flex justify-between font-medium"><span>Retoque hasta 3 semanas</span><strong class="text-secondary">desde S/ 140</strong></div>
+                        <p class="text-[10px] text-text-muted pt-2">*Pasadas 4 semanas se considera full set.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Pestaña 4: Podología Clínica -->
+    <div id="tab-podologia" class="tab-content hidden">
+        <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color max-w-3xl mx-auto transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+            <div class="w-full h-56 overflow-hidden bg-surface-variant relative">
+                <img src="https://placehold.co/800x400/5b21b6/ffffff?text=Imagen" alt="Imagen Podología" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+            </div>
+            <div class="p-8 space-y-4">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-xl text-primary transition-colors group-hover:text-secondary">Servicio Integral de Podología</h3>
+                    <span class="text-lg font-extrabold text-secondary">S/ 75</span>
+                </div>
+                <p class="text-xs text-text-muted leading-relaxed">
+                    Evaluación profesional para determinar patologías. Incluye tratamiento de micosis (hongos), extracción de uñeros, helomas/callosidades, retiro de cuerpos extraños, corte y pulido de uñas, exfoliación e hidratación profunda del pie.
+                </p>
+                <div class="p-4 bg-primary-light rounded-2xl text-xs text-primary font-bold">
+                    * Precio Adulto Mayor: S/ 95 (requiere mayor tiempo de atención y cuidado especial).
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Pestaña 5: Depilación -->
+    <div id="tab-depilacion" class="tab-content hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Depilación Facial" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Depilación Facial (Cera o Hilo)</h3>
+                    <div class="grid grid-cols-2 gap-2 text-xs pt-2">
+                        <div class="flex justify-between"><span>Cejas</span><strong class="text-secondary">S/ 25</strong></div>
+                        <div class="flex justify-between"><span>Bozo</span><strong class="text-secondary">S/ 20</strong></div>
+                        <div class="flex justify-between"><span>Frente</span><strong class="text-secondary">S/ 25</strong></div>
+                        <div class="flex justify-between"><span>Patillas</span><strong class="text-secondary">S/ 20</strong></div>
+                        <div class="flex justify-between"><span>Mentón / Mejillas</span><strong class="text-secondary">S/ 20</strong></div>
+                        <div class="flex justify-between font-bold text-primary"><span>Rostro Completo</span><strong>S/ 70</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Depilación Corporal" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Depilación Corporal con Cera</h3>
+                    <div class="grid grid-cols-2 gap-2 text-xs pt-2">
+                        <div class="flex justify-between"><span>Axilas</span><strong class="text-secondary">S/ 35</strong></div>
+                        <div class="flex justify-between"><span>Abdomen / Lumbar</span><strong class="text-secondary">S/ 45</strong></div>
+                        <div class="flex justify-between"><span>Brazo Completo</span><strong class="text-secondary">S/ 65</strong></div>
+                        <div class="flex justify-between"><span>Pierna Completa</span><strong class="text-secondary">S/ 80</strong></div>
+                        <div class="flex justify-between"><span>Bikini</span><strong class="text-secondary">S/ 55</strong></div>
+                        <div class="flex justify-between font-bold text-primary"><span>Brasilera Completa</span><strong>S/ 85</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Pestaña 6: Cabello & Peinados -->
+    <div id="tab-cabello" class="tab-content hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Alisados" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Alisados & Tratamientos</h3>
+                    <p class="text-xs text-text-muted">*Precios varían según el largo (Hasta hombros / Debajo de hombros).</p>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between"><span>Botox Orgánico</span><strong class="text-secondary">S/ 155 - S/ 180</strong></div>
+                        <div class="flex justify-between"><span>Alisado Keratina</span><strong class="text-secondary">S/ 290 - S/ 310</strong></div>
+                        <div class="flex justify-between"><span>Laceado Orgánico</span><strong class="text-secondary">S/ 330 - S/ 350</strong></div>
+                        <div class="flex justify-between"><span>Hidratación Olaplex</span><strong class="text-secondary">S/ 160 - S/ 190</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <div class="w-full h-48 overflow-hidden bg-surface-variant relative">
+                    <img src="https://placehold.co/600x400/5b21b6/ffffff?text=Imagen" alt="Imagen Cortes Peinados" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                </div>
+                <div class="p-6 space-y-3">
+                    <h3 class="font-bold text-lg text-primary transition-colors group-hover:text-secondary">Cortes & Peinados</h3>
+                    <div class="space-y-1 text-xs pt-2">
+                        <div class="flex justify-between"><span>Cepillado o Planchado</span><strong class="text-secondary">S/ 60 - S/ 75</strong></div>
+                        <div class="flex justify-between"><span>Corte de Puntas</span><strong class="text-secondary">S/ 60</strong></div>
+                        <div class="flex justify-between"><span>Corte Estructurado</span><strong class="text-secondary">S/ 100</strong></div>
+                        <div class="flex justify-between"><span>Peinado Estructurado</span><strong class="text-secondary">S/ 100</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenido Pestaña 7: Masajes -->
+    <div id="tab-masajes" class="tab-content hidden">
+        <div class="bg-surface rounded-3xl overflow-hidden shadow-soft border border-border-color max-w-2xl mx-auto text-center space-y-4 transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+            <div class="w-full h-56 overflow-hidden bg-surface-variant relative">
+                <img src="https://placehold.co/800x400/5b21b6/ffffff?text=Imagen" alt="Imagen Masajes" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+            </div>
+            <div class="p-8 space-y-4">
+                <h3 class="font-bold text-2xl text-primary transition-colors group-hover:text-secondary">Masajes Terapéuticos a Domicilio</h3>
+                <p class="text-xs text-text-muted">
+                    Masajes relajantes, descontracturantes, combinados, con aparatología y reflexología.
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                    <div class="p-6 bg-primary-light rounded-2xl">
+                        <span class="block text-xs uppercase font-bold text-primary">1 Sesión</span>
+                        <strong class="text-2xl text-primary block my-1">S/ 120</strong>
+                        <span class="text-[10px] text-text-muted">Cualquier tipo de masaje</span>
+                    </div>
+                    <div class="p-6 bg-secondary/10 rounded-2xl">
+                        <span class="block text-xs uppercase font-bold text-secondary">2 Sesiones Promocional</span>
+                        <strong class="text-2xl text-secondary block my-1">S/ 220</strong>
+                        <span class="text-[10px] text-text-muted">Mismo domicilio, consecutivas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- 3. RESULTADOS REALES BIUTI (CON HOVER Y 2 FOTOS INDEPENDIENTES) -->
+<section class="py-20 px-6 md:px-12 bg-background" id="resultados">
+    <div class="max-w-6xl mx-auto space-y-12">
+        
+        <div class="text-center space-y-2" data-aos="fade-up">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary">Resultados Reales Biuti</h2>
+            <p class="text-text-muted text-sm font-light">Transformaciones que inspiran confianza</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="100">
+            
+            <!-- Resultado 1: Manicura -->
+            <div class="bg-surface rounded-3xl p-3 shadow-soft border border-border-color transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <!-- Contenedor dividido para 2 fotos -->
+                <div class="grid grid-cols-2 gap-2 overflow-hidden rounded-2xl">
+                    <!-- Foto Before -->
+                    <div class="relative overflow-hidden aspect-[4/5] bg-surface-variant">
+                        <img src="https://placehold.co/400x500/5b21b6/ffffff?text=BEFORE" 
+                             alt="Antes Manicura Cat Eye" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                        <span class="absolute top-2 left-2 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Before</span>
+                    </div>
+                    <!-- Foto After -->
+                    <div class="relative overflow-hidden aspect-[4/5] bg-surface-variant">
+                        <img src="https://placehold.co/400x500/ec4899/ffffff?text=AFTER" 
+                             alt="Después Manicura Cat Eye" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                        <span class="absolute top-2 right-2 bg-secondary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">After</span>
+                    </div>
+                </div>
+
+                <div class="p-6 text-center space-y-2">
+                    <h3 class="font-bold text-base text-text-main group-hover:text-primary transition-colors">Manicura Efecto Cat Eye</h3>
+                    <div class="w-8 h-1 bg-secondary mx-auto rounded-full transition-all duration-300 group-hover:w-16"></div>
+                </div>
+            </div>
+
+            <!-- Resultado 2: Alisado Keratina -->
+            <div class="bg-surface rounded-3xl p-3 shadow-soft border border-border-color transition-all duration-300 hover:-translate-y-2 hover:shadow-card-float group">
+                <!-- Contenedor dividido para 2 fotos -->
+                <div class="grid grid-cols-2 gap-2 overflow-hidden rounded-2xl">
+                    <!-- Foto Before -->
+                    <div class="relative overflow-hidden aspect-[4/5] bg-surface-variant">
+                        <img src="https://placehold.co/400x500/5b21b6/ffffff?text=BEFORE" 
+                             alt="Antes Alisado Keratina" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                        <span class="absolute top-2 left-2 bg-black/60 backdrop-blur-sm text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Before</span>
+                    </div>
+                    <!-- Foto After -->
+                    <div class="relative overflow-hidden aspect-[4/5] bg-surface-variant">
+                        <img src="https://placehold.co/400x500/5b21b6/ffffff?text=AFTER" 
+                             alt="Después Alisado Keratina" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"/>
+                        <span class="absolute top-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">After</span>
+                    </div>
+                </div>
+
+                <div class="p-6 text-center space-y-2">
+                    <h3 class="font-bold text-base text-text-main group-hover:text-primary transition-colors">Alisado de Keratina Premium</h3>
+                    <div class="w-8 h-1 bg-primary mx-auto rounded-full transition-all duration-300 group-hover:w-16"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- 4. ZONAS DE COBERTURA -->
+<section class="py-20 px-6 md:px-12 bg-primary text-white" id="cobertura">
+    <div class="max-w-7xl mx-auto space-y-12">
+        
+        <div class="text-center space-y-3" data-aos="fade-up">
+            <div class="w-12 h-12 mx-auto rounded-full bg-white/10 flex items-center justify-center text-white mb-2">
+                <span class="material-symbols-outlined text-3xl">location_on</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Zonas de Cobertura</h2>
+            <p class="text-white/80 max-w-xl mx-auto text-sm font-light">
+                Llegamos a diversos distritos de Lima. El costo de movilidad se adiciona al total del servicio.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+            
+            <!-- Zona 1 -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 space-y-6">
+                <div class="flex justify-between items-center border-b border-white/20 pb-4">
+                    <h3 class="font-extrabold text-xl text-white">Zona 1</h3>
+                    <span class="text-lg font-bold text-white">S/ 10</span>
+                </div>
+                <ul class="space-y-3 text-xs text-white/90">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Miraflores</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> San Isidro</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Surquillo</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Lince</li>
+                </ul>
+            </div>
+
+            <!-- Zona 2 -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 space-y-6">
+                <div class="flex justify-between items-center border-b border-white/20 pb-4">
+                    <h3 class="font-extrabold text-xl text-white">Zona 2</h3>
+                    <span class="text-lg font-bold text-white">S/ 15 – 20</span>
+                </div>
+                <ul class="space-y-3 text-xs text-white/90">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Surco</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> San Borja</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Magdalena</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Jesús María</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Barranco</li>
+                </ul>
+            </div>
+
+            <!-- Zona 3 -->
+            <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 space-y-6">
+                <div class="flex justify-between items-center border-b border-white/20 pb-4">
+                    <h3 class="font-extrabold text-xl text-white">Zona 3</h3>
+                    <span class="text-lg font-bold text-white">S/ 25 – 30</span>
+                </div>
+                <ul class="space-y-3 text-xs text-white/90">
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> La Molina</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> San Miguel</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Pueblo Libre</li>
+                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> Chorrillos (centro)</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <p class="text-center text-xs text-white/70 italic pt-2">
+            Referencia de movilidad: Ver listado completo en nuestro WhatsApp.
+        </p>
+    </div>
+</section>
+
+<!-- 5. BIOSEGURIDAD Y GARANTÍA -->
+<section class="py-20 px-6 md:px-12 max-w-7xl mx-auto" id="protocolos">
+    <div class="bg-primary text-white p-8 md:p-12 rounded-3xl shadow-card-float grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-4" data-aos="fade-right">
+            <span class="bg-white/20 text-white font-bold text-[10px] uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">
+                Sello de Garantía Biuti
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold">Protocolos Sanitarios Estrictos</h2>
+            <p class="text-xs sm:text-sm text-white/80 leading-relaxed">
+                Nos preocupamos por tu salud. Cada especialista llega a tu hogar equipada con herramientas esterilizadas en empaques Kraft individuales, kits descartables y movilidad propia.
+            </p>
+        </div>
+
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4 text-xs" data-aos="fade-left" data-aos-delay="200">
+            <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
+                <span class="material-symbols-outlined text-secondary text-2xl">sanitizer</span>
+                <strong class="block font-bold mt-1">Esterilización KRAFT</strong>
+                <span class="text-white/70">Herramientas selladas por cliente.</span>
+            </div>
+            <div class="p-4 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
+                <span class="material-symbols-outlined text-secondary text-2xl">masks</span>
+                <strong class="block font-bold mt-1">Kits Descartables</strong>
+                <span class="text-white/70">Guantes y cubre-zapatos de un solo uso.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. COTIZADOR Y FORMULARIO DE RESERVA -->
+<section class="py-20 px-6 md:px-12 max-w-7xl mx-auto" id="reserva">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
+            <span class="bg-primary-light text-primary px-4 py-1.5 rounded-full font-bold text-xs uppercase tracking-wider">
+                Reserva tu Cita
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-primary">Agenda en 3 Simples Pasos</h2>
+            <p class="text-xs sm:text-sm text-text-muted leading-relaxed">
+                Selecciona tus servicios, ingresa tu distrito para calcular la movilidad y confirma tu pedido instantáneamente por WhatsApp.
+            </p>
+
+            <div class="p-6 bg-surface rounded-2xl border border-border-color space-y-3 text-xs">
+                <strong class="block text-sm text-primary font-bold">Atención Directa:</strong>
+                <p class="text-text-muted">WhatsApp Oficial: +51 936 638 219</p>
+                <p class="text-text-muted">Horarios: Lunes a Domingo previa coordinación.</p>
+            </div>
+        </div>
+
+        <!-- Formulario dinámico a WhatsApp -->
+        <div class="lg:col-span-7 bg-surface p-8 md:p-10 rounded-3xl shadow-soft border border-border-color" data-aos="fade-left" data-aos-delay="200">
+            <h3 class="text-2xl font-bold text-primary mb-2">Solicitar Atención</h3>
+            <p class="text-xs text-text-muted mb-6">Completa tus datos para enviarle la orden a nuestras asesoras.</p>
+
+            <form id="biuti-form" class="space-y-5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs font-bold text-text-main mb-2" for="b-name">Nombre Completo *</label>
+                        <input class="w-full bg-background rounded-xl border border-border-color px-4 py-3 text-xs text-text-main focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" id="b-name" placeholder="Ej. Ana Lucía" required type="text"/>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-text-main mb-2" for="b-phone">Teléfono / Celular *</label>
+                        <input class="w-full bg-background rounded-xl border border-border-color px-4 py-3 text-xs text-text-main focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" id="b-phone" placeholder="999 999 999" required type="tel"/>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs font-bold text-text-main mb-2" for="b-district">Distrito de Atención *</label>
+                        <select class="w-full bg-background rounded-xl border border-border-color px-4 py-3 text-xs text-text-main focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" id="b-district" required>
+                            <option value="Barranco (Movilidad S/ 10)">Barranco (+ S/ 10 movilidad)</option>
+                            <option value="Miraflores (Movilidad S/ 10)">Miraflores (+ S/ 10 movilidad)</option>
+                            <option value="Surquillo (Movilidad S/ 10)">Surquillo (+ S/ 10 movilidad)</option>
+                            <option value="San Isidro (Movilidad S/ 15)">San Isidro (+ S/ 15 movilidad)</option>
+                            <option value="San Borja (Movilidad S/ 15)">San Borja (+ S/ 15 movilidad)</option>
+                            <option value="Surco (Movilidad S/ 15)">Surco (+ S/ 15 movilidad)</option>
+                            <option value="Lince (Movilidad S/ 15)">Lince (+ S/ 15 movilidad)</option>
+                            <option value="Jesús María (Movilidad S/ 20)">Jesús María (+ S/ 20 movilidad)</option>
+                            <option value="Pueblo Libre (Movilidad S/ 20)">Pueblo Libre (+ S/ 20 movilidad)</option>
+                            <option value="Magdalena (Movilidad S/ 20)">Magdalena (+ S/ 20 movilidad)</option>
+                            <option value="San Miguel (Movilidad S/ 20)">San Miguel (+ S/ 20 movilidad)</option>
+                            <option value="La Molina (Movilidad S/ 25)">La Molina (+ S/ 25 movilidad)</option>
+                            <option value="Chorrillos (Movilidad S/ 25)">Chorrillos (+ S/ 25 movilidad)</option>
+                            <option value="Otro distrito (por consultar)">Otro Distrito (Consultar movilidad)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-text-main mb-2" for="b-service">Servicio Principal *</label>
+                        <select class="w-full bg-background rounded-xl border border-border-color px-4 py-3 text-xs text-text-main focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" id="b-service" required>
+                            <option value="Manicure / Pedicure / Gel">Manicure / Pedicure / Gel</option>
+                            <option value="Sistemas Acrílicas o Polygel">Sistemas Acrílicas o Polygel</option>
+                            <option value="Pestañas y Cejas (Lifting/Ext)">Pestañas y Cejas (Lifting/Ext)</option>
+                            <option value="Podología Clínica">Podología Clínica (S/ 75)</option>
+                            <option value="Depilación Cera o Hilo">Depilación Cera o Hilo</option>
+                            <option value="Cabello / Alisado / Peinado">Cabello / Alisado / Peinado</option>
+                            <option value="Masajes Terapéuticos">Masajes Terapéuticos</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-text-main mb-2" for="b-address">Dirección Exacta & Fecha Deseada *</label>
+                    <textarea class="w-full bg-background rounded-xl border border-border-color px-4 py-3 text-xs text-text-main focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none resize-none" id="b-address" placeholder="Ej. Calle Los Pinos 123 Dpto 301 - Mañana a las 4:00 pm" rows="3" required></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-primary text-white font-bold text-xs uppercase tracking-wider py-4 rounded-full hover:bg-primary-hover transition-all shadow-md flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-base">send</span>
+                    <span>Reservar Vía WhatsApp</span>
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-primary text-white py-12 px-6 md:px-12 border-t border-border-color">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left items-start">
+        
+        <!-- Logo Único de Marca en Footer -->
+        <div class="space-y-4">
+            <div class="flex items-center justify-center md:justify-start">
+                <img src="img/logo2.png" alt="Logo Biuti Perú" class="h-20 w-auto object-contain transition-transform hover:scale-105" />
+            </div>
+            <p class="text-xs text-white/80 max-w-sm mx-auto md:mx-0 leading-relaxed">
+                Empresa especializada en brindar servicios profesionales de belleza a domicilio en Lima.
+            </p>
+
+            <!-- Íconos de Redes Sociales (Footer) -->
+            <div class="flex items-center justify-center md:justify-start gap-3 pt-2">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/peru.biuti/photos?locale=es_LA" target="_blank" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-primary transition-all flex items-center justify-center text-white shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 3.657 10.93 9 11.82V15.47H6.438v-3.397H9v-2.583c0-2.532 1.492-3.926 3.824-3.926 1.116 0 2.285.2 2.285.2v2.51h-1.288c-1.256 0-1.649.78-1.649 1.58v1.921h2.825l-.45 3.397h-2.375v8.423c5.343-.89 9-5.83 9-11.82z"/></svg>
+                </a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/biuti.up/" target="_blank" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-primary transition-all flex items-center justify-center text-white shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+
+                <!-- TikTok (Añadido) -->
+                <a href="https://www.tiktok.com/@biuti.up" target="_blank" aria-label="TikTok" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white hover:text-primary transition-all flex items-center justify-center text-white shadow-sm">
+                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.82.56-1.33 1.52-1.32 2.52.01.88.48 1.72 1.21 2.18.82.52 1.88.61 2.76.22.95-.41 1.61-1.33 1.72-2.35.03-3.24.01-6.49.01-9.73z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="space-y-3">
+            <h4 class="font-bold text-sm uppercase tracking-wider text-secondary">Contacto</h4>
+            <ul class="text-xs space-y-2 text-white/80">
+                <li>WhatsApp: +51 936 638 219</li>
+                <li>Oficina: Av. Reducto 861, Miraflores, Lima</li>
+                <li>Correo: biutiperu@gmail.com</li>
+            </ul>
+        </div>
+
+        <div class="space-y-3">
+            <h4 class="font-bold text-sm uppercase tracking-wider text-secondary">Cobertura Principal</h4>
+            <p class="text-xs text-white/80 leading-relaxed">
+                Miraflores • San Isidro • Surco • San Borja • Barranco • La Molina • San Miguel y más.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-8 mt-8 border-t border-white/10 text-center text-xs text-white/60">
+        © 2026 Biuti Perú. Todos los derechos reservados.
+    </div>
+</footer>
+
+<!-- AOS JS & Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // Cambio de Pestañas en la Carta de Servicios
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Inicializar AOS
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true,
+                easing: 'ease-out-sine'
+            });
+        }
+
+        // Toggle Menú Móvil
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                }
+            });
+        }
+
+        // Formulario WhatsApp
+        const form = document.getElementById('biuti-form');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const phone = "51936638219";
+                const name = document.getElementById('b-name').value;
+                const userPhone = document.getElementById('b-phone').value;
+                const district = document.getElementById('b-district').value;
+                const service = document.getElementById('b-service').value;
+                const address = document.getElementById('b-address').value;
+
+                const text = `Hola Biuti Perú, deseo agendar un servicio a domicilio:\n\n` +
+                             `👤 *Cliente:* ${name}\n` +
+                             `📞 *Teléfono:* ${userPhone}\n` +
+                             `📍 *Distrito:* ${district}\n` +
+                             `💅 *Servicio:* ${service}\n` +
+                             `🏠 *Dirección & Fecha:* ${address}`;
+
+                const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+        }
+    });
+</script>
+
+</body>
+</html>
